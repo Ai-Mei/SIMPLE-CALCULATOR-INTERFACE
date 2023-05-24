@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 import time
+from OPERATIONS import Operation
+op = Operation()
 
 class UserInterface:
     def __init__(self, root):
@@ -30,6 +32,8 @@ class UserInterface:
         button = tk.Button(self.root, text="Process Inputs", command=self.execute)
         button.pack(pady=10)
  
+
+    # Make a loading animation
     def animate_loading(self, loading_label, duration=5):
         start_time = time.time()
         part = 0
@@ -51,8 +55,35 @@ class UserInterface:
 
     def execute(self):
         num_1 = self.entry1.get()
+        # Check if the input is a number.
+        try:
+            num_1 = float(num_1)
+        except ValueError:
+            messagebox.showerror("Invalid Input", "⚠️ Invalid value. Please enter a valid number.")
+            return
+        
         num_2 = self.entry2.get()
+        # Check if the input is a number. 
+        try:
+            num_2 = float(num_2)
+        except ValueError:
+            messagebox.showerror("Invalid Input", "⚠️ Invalid value. Please enter a valid number.")
+            return
+        
         operation = self.entry3.get()
+        operation = self.entry3.get()
+        if operation == "+":
+            result = op.Addition(num_1, num_2)
+        elif operation == "-":
+            result = op.Subtraction(num_1, num_2)
+        elif operation == "*":
+            result = op.Multiplication(num_1, num_2)
+        elif operation == "/":
+            result = op.Division(num_1, num_2)
+        else:
+            messagebox.showerror("Invalid Input", "Invalid operation. Please enter a valid operation (+, -, *, /).")
+            return
+
         loading_label = tk.Label(self.root, text="Loading")
         loading_label.pack()
         self.animate_loading(loading_label, duration=5)

@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from tkinter import messagebox
 
 
 class UserInterface:
@@ -26,5 +26,14 @@ class UserInterface:
         self.entry3 = tk.Entry(self.root)
         self.entry3.pack()
 
+        # Enter
+        button = tk.Button(self.root, text="Process Inputs", command=self.execute)
+        button.pack(pady=10)
  
+    def execute(self):
+        num_1 = self.entry1.get()
+        num_2 = self.entry2.get()
+        operation = self.entry3.get()
+        messagebox.showinfo("Answer", f"Input 1: {num_1}\nInput 2: {num_2}\nOperation: {operation}")
+
        

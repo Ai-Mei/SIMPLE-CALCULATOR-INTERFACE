@@ -1,7 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
-from OPERATIONS import Operation
-op = Operation()
+
 
 
 class UserInterface:
@@ -28,24 +26,5 @@ class UserInterface:
         self.entry3 = tk.Entry(self.root)
         self.entry3.pack()
 
-    #     # Enter
-    #     button = tk.Button(self.root, text="Process Inputs", command=self.execute)
-    #     button.pack(pady=10)
-
-    # def execute(self):
-    #     num_1 = self.entry1.get()
-    #     try:
-    #         num_1 = float(num_1)
-    #     except ValueError:
-    #         messagebox.showerror("Invalid Input", "Invalid value. Please enter a valid number.")
-    #         return
-        
-    #     num_2 = self.entry2.get()
-    #     try:
-    #         num_2 = float(num_2)
-    #     except ValueError:
-    #         messagebox.showerror("Invalid Input", "Invalid value. Please enter a valid number.")
-    #         return
-
-    #     operation = self.entry3.get()
+ 
        

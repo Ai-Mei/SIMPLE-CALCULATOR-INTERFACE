@@ -87,6 +87,6 @@ class UserInterface:
         loading_label = tk.Label(self.root, text="Loading")
         loading_label.pack()
         self.animate_loading(loading_label, duration=5)
-        messagebox.showinfo("Answer", f"Input 1: {num_1}\nInput 2: {num_2}\nOperation: {operation}")
+        messagebox.showinfo("Answer", f"Input 1: {num_1}\nInput 2: {num_2}\nOperation: {operation}\n{result}")
 
        

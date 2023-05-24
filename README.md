@@ -16,9 +16,11 @@ This program asks the user for 2 input numbers (in order). Then the program will
 
 
 >4. The user will need to click the Process Inputs button to process the data.
+
 >![11](https://github.com/Ai-Mei/SIMPLE-CALCULATOR-INTERFACE/assets/129598147/0fd61e9f-043d-4e94-9116-0814ea6fe537)
 
 >5. Ifthe user's input is not a number and is not an operation, an error message will be outputd.
+>
 >![22](https://github.com/Ai-Mei/SIMPLE-CALCULATOR-INTERFACE/assets/129598147/b1976e9f-4625-45c6-9d0b-bce8891c52ce)
 
 

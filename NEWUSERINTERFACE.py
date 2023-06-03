@@ -36,6 +36,9 @@ class NewUserInterface(UserInterface):
             result = new_cal.multiplication(num_1, num_2)
         elif operation == "/":
             result = new_cal.division(num_1, num_2)
+        # Added the new methods.
+        elif operation == "^":
+            result = new_cal.raise_to_nth_power(num_1, num_2)
         else:
             messagebox.showerror("Invalid Input", "⚠️ Invalid operation. Please enter a valid operation (+, -, *, /).")
             return

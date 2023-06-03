@@ -36,5 +36,16 @@ class NewCalculator:
         except TypeError:
             # Input is not a valid number
             return f"⚠️ Please enter 2 numbers."
+        
+    # Added a method for raising a number to nth number.
+    def raise_to_nth_power(self, num_1, num_2):
+        try:
+            answer = num_1 ** num_2
+            return f"{num_1} raised to the power of {num_2} is: {answer}"
+        except ValueError:
+            return f"⚠️ Error, invaldid input."
+        except TypeError:
+            # Input is not a valid number
+            return f"⚠️ Please enter 2 numbers."
 
         

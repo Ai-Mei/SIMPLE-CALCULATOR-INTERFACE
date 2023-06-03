@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 import time
-from OPERATIONS import Operation
-op = Operation()
+from NEWCALCULATOR import NewCalculator
+new_cal = NewCalculator()
 
 class UserInterface:
     def __init__(self, root):
@@ -63,23 +63,26 @@ class UserInterface:
             return
         
         num_2 = self.entry2.get()
-        # Check if the input is a number. 
         try:
             num_2 = float(num_2)
         except ValueError:
+            # Input is not a valid number
             messagebox.showerror("Invalid Input", "⚠️ Invalid value. Please enter a valid number.")
             return
+        else:
+            if num_2.strip() == "":
+                pass
         
         operation = self.entry3.get()
         operation = self.entry3.get()
         if operation == "+":
-            result = op.Addition(num_1, num_2)
+            result = new_cal.Addition(num_1)
         elif operation == "-":
-            result = op.Subtraction(num_1, num_2)
+            result = new_cal.Subtraction(num_1, num_2)
         elif operation == "*":
-            result = op.Multiplication(num_1, num_2)
+            result = new_cal.Multiplication(num_1, num_2)
         elif operation == "/":
-            result = op.Division(num_1, num_2)
+            result = new_cal.Division(num_1, num_2)
         else:
             messagebox.showerror("Invalid Input", "⚠️ Invalid operation. Please enter a valid operation (+, -, *, /).")
             return

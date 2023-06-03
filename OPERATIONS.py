@@ -5,8 +5,8 @@ class Operation:
         return f"The sum of the two numbers: {answer}"
 
     def Subtraction(self, num_1, num_2):
-        answer = num_1 - num_2
-        return f"The difference of the two numbers: {answer}"
+            answer = num_1 - num_2
+            return f"The difference of the two numbers: {answer}"
 
     def Multiplication(self, num_1, num_2):
         answer = num_1 * num_2
@@ -18,3 +18,4 @@ class Operation:
             return f"The quotient of the two numbers: {answer}"
         except ZeroDivisionError:
             return "⚠️ Error, the number is divided by 0."
+        

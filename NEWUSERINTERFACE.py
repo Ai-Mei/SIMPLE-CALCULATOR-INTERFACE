@@ -20,7 +20,7 @@ class NewUserInterface(UserInterface):
 
         # Enumeration and explanations per operation.
         message_text = "Please refer below for operations:\n\n+ for Addition\n\n- for substraction\n\n* for multiplication\n\n/ for division\n\n^ for number raise to n\n✩°｡ Note: 1st number is the \nbase and 2nd is the exponent\n"
-        message_text_1 = "\n\n\n\n\nsqrt for squareroot\n✩°｡ Note: Please input only 1 number\n\nnthrt for raising the 1st\nnumber to power of\n2nd number\n\n! for factorial\n✩°｡ Note: Please input only 1 number\n\n% for percentage\n✩°｡ Note:\n1st number = number\n2nd number = percentage\n"
+        message_text_1 = "\n\n\n\n\nsqrt for squareroot\n✩°｡ Note: Please input only 1 number\n\nnthrt for getting the nth root of the first number\n✩°｡ Note: 2nd number is n\n\n! for factorial\n✩°｡ Note: Please input only 1 number\n\n% for percentage\n✩°｡ Note:\n1st number = number\n2nd number = percentage\n"
         message_frame = tk.Frame(bg="#D9D7F1")
         message_frame.pack()
 

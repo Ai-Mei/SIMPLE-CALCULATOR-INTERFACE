@@ -66,22 +66,41 @@ class NewCalculator:
 
     def nth_root(self, num_1, num_2):
         try:
+            num_1 = float(num_1)
+            num_2 = float(num_2)
+            
+            if num_2 == 0:
+                raise ValueError("We can not calculate the 0th root.")
+                
             answer = num_1 ** (1 / num_2)
-            return f"The {num_2}th root of {num_1} is: {answer}"
+            return f"The {num_2}rd/th root of {num_1} is: {answer}"
+        
         except ValueError as e:
-            return f"⚠️ Error, {str(e)}"
+            return f"⚠️ Error: {str(e)}"
         except TypeError:
-            # Input is not a valid number
-            return f"⚠️ Please enter 2 numbers."
+            return f"⚠️ Please enter two numbers."
+
         
     def factorial(self, num_1):
-        if num_1 < 0:
-            raise ValueError("Factorial is not defined for negative numbers.")
-        answer = 1
-        for i in range(1, num_1 + 1):
-            answer *= i
-        return answer
-    
+        try:
+            num_1 = int(num_1)
+            if num_1 < 0:
+                raise ValueError("Factorial is not defined for negative numbers.")
+            elif not isinstance(num_1, int):
+                raise TypeError("Please enter a whole number.")
+                
+            answer = 1
+            for i in range(1, num_1 + 1):
+                answer *= i
+            
+            return answer
+            
+        except ValueError as e:
+            return f"⚠️ Error: {str(e)}"
+        except TypeError as e:
+            return f"⚠️ Error: {str(e)}"
+
+
     def percentage(self, num_1, num_2):
         try:
             answer = (num_2 / 100) * num_1

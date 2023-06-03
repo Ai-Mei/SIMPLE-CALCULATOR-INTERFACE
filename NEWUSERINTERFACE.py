@@ -5,6 +5,35 @@ import tkinter as tk
 new_cal = NewCalculator()
 
 class NewUserInterface(UserInterface):
+
+    def CreateWidgets(self):
+        # Ask the user for inputs:
+        label1 = tk.Label(self.root, text="Input the first number:", bg="#D9D7F1", fg="#354259")
+        label1.pack()
+        self.entry1 = tk.Entry(self.root)
+        self.entry1.pack()
+
+        label2 = tk.Label(self.root, text="Input the second number:", bg="#D9D7F1", fg="#354259")
+        label2.pack()
+        self.entry2 = tk.Entry(self.root)
+        self.entry2.pack()
+
+        # Enumeration and explanations per operation.
+        message = tk.Label(self.root, text="Please refer below for operations:\n+ for Addition\n\n- for substraction\n\n* for multiplication\n\n/ for division\n\n^ for number raise to n\n\n     ✩°｡ Note: 1st number is\nthe base and 2nd is the\nexponent\n\nsqrt for squareroot \n✩°｡ Note: Please input only one number\n\nnthrt for raising the 1st\nnumber to power of\n2nd number\n\n! for factorial\n✩°｡ Note: Please input only 1 number\n\n% for percentage\n✩°｡ Note:\n1st number = number\n2nd number = percentage\n", bg="#D9D7F1", fg="#205E61")
+        message.pack()
+
+
+        # Ask user for operatuion
+        label3 = tk.Label(self.root, text="Type the operation:", bg="#D9D7F1", fg="#AD8B73")
+        label3.pack()
+        self.entry3 = tk.Entry(self.root)
+        self.entry3.pack()
+
+        # Enter
+        button = tk.Button(self.root, text="Process Inputs", bg="#FDEFEF", fg="#B980F0", command=self.execute)
+        button.pack(pady=10)
+
+
     def execute(self):
         num_1 = self.entry1.get()
         # Check if the input is a number.
@@ -39,8 +68,18 @@ class NewUserInterface(UserInterface):
         # Added the new methods.
         elif operation == "^":
             result = new_cal.raise_to_nth_power(num_1, num_2)
+        elif operation.lower() == "sqrt":
+            result = new_cal.square_root(num_1)
+        elif operation.lower() == "nthrt":
+            result = new_cal.nth_root(num_1, num_2)
+        elif operation == "!":
+            result = new_cal.factorial(num_1)
+        elif operation == "%":
+            result = new_cal.percentage(num_1, num_2)
+
+
         else:
-            messagebox.showerror("Invalid Input", "⚠️ Invalid operation. Please enter a valid operation (+, -, *, /).")
+            messagebox.showerror("Invalid Input", "⚠️ Invalid operation. Please enter a valid operation (+, -, *, /, ^, sqrt, nthrt, !, %).")
             return
 
         loading_label = tk.Label(self.root, text="Loading", bg="#FDEFEF", fg="#FFACAC")

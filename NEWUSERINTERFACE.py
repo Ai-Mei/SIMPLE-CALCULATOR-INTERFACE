@@ -19,9 +19,16 @@ class NewUserInterface(UserInterface):
         self.entry2.pack()
 
         # Enumeration and explanations per operation.
-        message = tk.Label(self.root, text="Please refer below for operations:\n+ for Addition\n\n- for substraction\n\n* for multiplication\n\n/ for division\n\n^ for number raise to n\n\n     ✩°｡ Note: 1st number is\nthe base and 2nd is the\nexponent\n\nsqrt for squareroot \n✩°｡ Note: Please input only one number\n\nnthrt for raising the 1st\nnumber to power of\n2nd number\n\n! for factorial\n✩°｡ Note: Please input only 1 number\n\n% for percentage\n✩°｡ Note:\n1st number = number\n2nd number = percentage\n", bg="#D9D7F1", fg="#205E61")
-        message.pack()
+        message_text = "Please refer below for operations:\n\n+ for Addition\n\n- for substraction\n\n* for multiplication\n\n/ for division\n\n^ for number raise to n\n✩°｡ Note: 1st number is the \nbase and 2nd is the exponent\n"
+        message_text_1 = "\n\n\n\n\nsqrt for squareroot\n✩°｡ Note: Please input only 1 number\n\nnthrt for raising the 1st\nnumber to power of\n2nd number\n\n! for factorial\n✩°｡ Note: Please input only 1 number\n\n% for percentage\n✩°｡ Note:\n1st number = number\n2nd number = percentage\n"
+        message_frame = tk.Frame(bg="#D9D7F1")
+        message_frame.pack()
 
+        left_column = tk.Label(message_frame, text=message_text, justify=tk.LEFT, anchor='w', bg="#D9D7F1", fg="#205E61")
+        left_column.grid(row=0, column=0, sticky="w")
+
+        right_column = tk.Label(message_frame, text=message_text_1, justify=tk.LEFT, anchor='w', bg="#D9D7F1", fg="#205E61")
+        right_column.grid(row=0, column=1, sticky= "w")
 
         # Ask user for operatuion
         label3 = tk.Label(self.root, text="Type the operation:", bg="#D9D7F1", fg="#AD8B73")
